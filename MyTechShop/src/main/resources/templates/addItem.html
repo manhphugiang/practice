@@ -1,0 +1,142 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item</title>
+    <link rel="stylesheet" type="text/css" href="/css/addItem.css">
+</head>
+<body>
+    <div class="container">
+        <div class="user-info" sec:authorize="isAuthenticated()"> 
+            <p>User's Name: <span sec:authentication="name"></span></p>
+            <p>Roles: <span sec:authentication="principal.authorities"></span></p>
+            <form th:action="@{/logout}" method="POST"> 
+                <input type="submit" value="Logout" class="btn-logout">
+            </form>
+        </div>
+
+        <h2>Add Item</h2>
+        <form th:action="@{/addItem}" method="post" th:object="${item}" class="add-item-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" step="0.01" id="price" name="price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Add Item</button>
+        </form>
+
+        <div class="links">
+            <a href="/">Go To Root</a>
+            <a href="/add">This is the link to the add accountant page</a>
+            <a href="/view">This is the link to the view accountant page</a>
+            <a href="/registration">Registration page</a>
+            <a href="/email">Take to email page</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item</title>
+    <link rel="stylesheet" type="text/css" href="/css/addItem.css">
+</head>
+<body>
+    <div class="container">
+        <div class="user-info" sec:authorize="isAuthenticated()"> 
+            <p>User's Name: <span sec:authentication="name"></span></p>
+            <p>Roles: <span sec:authentication="principal.authorities"></span></p>
+            <form th:action="@{/logout}" method="POST"> 
+                <input type="submit" value="Logout" class="btn-logout">
+            </form>
+        </div>
+
+        <h2>Add Item</h2>
+        <form th:action="@{/addItem}" method="post" th:object="${item}" class="add-item-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" step="0.01" id="price" name="price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Add Item</button>
+        </form>
+
+        <div class="links">
+            <a href="/">Go To Root</a>
+            <a href="/add">This is the link to the add accountant page</a>
+            <a href="/view">This is the link to the view accountant page</a>
+            <a href="/registration">Registration page</a>
+            <a href="/email">Take to email page</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for changing background color on form hover
+        const addItemForm = document.querySelector('.add-item-form');
+
+        addItemForm.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#f0f0f0';
+        });
+
+        addItemForm.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '#ffffff';
+        });
+    </script>
+</body>
+</html>

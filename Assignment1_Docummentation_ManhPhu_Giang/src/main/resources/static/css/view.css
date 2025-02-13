@@ -1,0 +1,41 @@
+body{
+    background-image: url('/3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+/* Style the table */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+
+  }
+  
+  /* Style the button */
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 20px auto;
+  }
+  
+  a:hover {
+    background-color: #0056b3;
+  }
+  h1{
+	  text-align: center;
+	  padding: 10px;
+	  border: #ccc;
+	  background-color: mediumturquoise;
+  }

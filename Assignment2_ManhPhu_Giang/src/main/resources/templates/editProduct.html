@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+    <link rel="stylesheet" type="text/css" href="/css/editProduct.css">
+
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form th:action="@{/edit}" method="post" th:object="${product}">
+			<input type="hidden" th:field="*{id}">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" th:field="*{productName}" required><br>
+        <label for="store">Store:</label>
+        <select id="store" name="storeName" required>
+            <option th:each="store : ${storeNames}" th:value="${store}" th:text="${store}" th:field="*{storeName}"></option>
+        </select>
+        <br><br>
+        <label for="productNumber">Product Number:</label>
+        <input type="number" id="productNumber" name="productNumber" th:field="*{productNumber}" required><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" step="0.01" name="price" th:field="*{price}" required><br>
+
+        <br><br>
+        <input type="submit" value="Edit Product">
+    </form>
+
+
+    <br><br>
+    <a href='/addProduct' method='get'> Link To Add Some Product Item For the Store </a>
+    <br><br>
+    <a href='/view' method='get'> Link To View Product of the Store </a>
+    <br><br>
+
+    <a href='/addStore' method='get'> Link To Add Some Store </a>
+    
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+INSERT INTO contacts(name, address, phoneNumber, email) VALUES 

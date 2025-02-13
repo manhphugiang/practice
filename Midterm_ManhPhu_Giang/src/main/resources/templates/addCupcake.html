@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>addddd cupkakeeeeee </h1>
+
+
+
+
+
+<form th:action="@{/addCupcake}" method="post" th:object="${cupcake}">
+		
+   Cupcake Name: <input type="text" th:field="*{cupcakeName}" required> <br><br>
+    Cupcake Price  : <input type="number" step="0.01" th:field="*{price}"  required> <br><br>
+    Cupcake Quantity: <input type="number" th:field="*{quantity}" required ><br><br>
+    
+    <br>
+    <input type="submit" value="Submit">
+    </form>
+
+
+
+<br><br>
+<br><br>
+<a href='/view' method='get'> Link To View Cupcake  </a>
+
+<br><br>
+<br><br>
+<a href='/' method='get'> Link To Root Page Cupcake  </a>
+</body>
+</html>

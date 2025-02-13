@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>
+Home Page 
+</h1>
+<h2> Welcome back <span th:text=${meow}></span> </h2>
+	<h2 th:text="${meow}">Hello</h2>
+	
+	<ul>
+		<li>Joh</li>
+		<li>Tim</li>
+		<li>Joh</li>
+	</ul>
+	<br>
+	<h3>
+From The Attribute List
+	</h3>
+<img th:src="@{/img.jpg}" id="2">
+
+	
+	<ol>
+	<li th:each="moo :${woof}" th:text=${moo}></li>
+
+	</ol>
+</body>
+</html>

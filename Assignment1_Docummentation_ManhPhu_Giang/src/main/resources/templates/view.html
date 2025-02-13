@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Manh Phu Giang</title>
+<link th:href="@{/css/view.css}" rel="stylesheet">
+</head>
+<body>
+<h1>
+    Your Proof Of Purchase And Confirmation
+</h1>
+<table border="1">
+    <tr> 
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Card Number </th>
+        <th>Card Name </th>
+        <th> CVV </th>
+        <th> Ticket Type </th>
+         <th> Get Proof by SMS </th>
+        <th>Get Proof by Email </th>
+        <th>Phone number </th>
+        <th>Email </th>
+    </tr>
+<tr th:each="ticket: ${ticketPrint}">
+    <td th:text= "${ticket.firstname}"></td>
+    <td th:text= "${ticket.lastname}"></td> 
+    <td th:text= "${ticket.cardNumber}"></td> 
+    <td th:text= "${ticket.nameHolder}"></td> 
+        <td th:text= "${ticket.cvv}"></td> 
+
+        <td th:text= "${ticket.ticketType}"></td> 
+
+    <td th:text= "${ticket.sms}"></td>
+    <td th:text= "${ticket.mail}"></td> 
+    <td th:text= "${ticket.phoneNumber}"></td> 
+    <td th:text= "${ticket.email}"></td> 
+</tr>
+</table>
+
+<a href="/add">Link To Add Page</a>
+<a href="/">Link To Root Page</a>
+
+</body>
+</html>

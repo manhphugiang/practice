@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Products</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/viewTicket.css}">
+
+</head>
+<body>
+
+    <h1> User Table </h1> 
+
+    <table border="1">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Credit Card Number</th>
+                <th>Email</th>
+                <th>CVV</th>
+    
+            </tr>
+        </thead>
+        
+        
+        <tbody>
+            <tr th:each="ticketData : ${ticketData}">
+                <td th:text="${ticketData.name}"></td>
+                <td th:text="${ticketData.creditCardNumber}"></td>
+                 <td th:text="${ticketData.email}"></td>
+                <td th:text="${ticketData.cvv}"></td>
+
+            </tr>
+
+        </table>
+
+<h1> Ticket Table </h1> 
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Ticket Type</th>
+
+
+
+
+        </tr>
+    </thead>
+    
+    
+    <tbody>
+        <tr th:each="ticketData : ${ticketData}">
+            <td th:text="${ticketData.name}"></td>
+            <td th:text="${ticketData.price}"></td>
+            <td th:text="${ticketData.ticketType}"></td>
+
+    <td>
+        <a th:href="@{/edit/{id}(id=${ticketData.id})}">EDIT</a>
+        <a th:href="@{/delete/{id}(id=${ticketData.id})}">DELETE</a>
+    </td>
+</tr>
+
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+    <br><br>
+<a href='/addTicket' method='get'> Link To Add Some Ticket For Guest </a>
+<br><br>
+
+
+<br><br>
+
+
+<a href='/' method='get'> Link Go To Root </a>
+
+
+
+</body>
+</html>

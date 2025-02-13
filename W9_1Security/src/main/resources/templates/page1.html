@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<h1>hello this is the page user </h1>
+
+<div sec:authorize="isAuthenticated()"> 
+
+	User's Name: <span sec:authentication="name"></span> <br>
+	Roles: <span sec:authentication="principal.authorities"></span> <br>
+	<br><br>
+	
+	
+	
+	<!--create logout button-->
+	<form th:action="@{/logout}" method="POST"> 
+		<input type="submit" value="Logout">
+	</form>
+	
+</div>
+
+
+
+
+
+
+
+<a href="/page1">Go to Page 1</a>
+<br>
+<br>
+
+<a href="/page2">Link To Page 2</a>
+
+<br>
+<br>
+
+<br><br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout" >
+</form>
+</body>
+</html>

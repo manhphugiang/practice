@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div th:if="${cart.items.size() == 0}">
+        <p>Your cart is empty</p>
+    </div>
+    <div th:unless="${cart.items.size() == 0}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cartItem : ${cart.items}">
+                    <td th:text="${cartItem.item.name}">Item Name</td>
+                    <td th:text="${cartItem.quantity}">1</td>
+                    <td th:text="${cartItem.item.price}">10.00</td>
+                    <td th:text="${#numbers.formatDecimal(cartItem.quantity * cartItem.item.price, 1, 'POINT', 2, 'COMMA')}">10.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<form th:action="@{/cart/checkout}" method="post">
+    <button type="submit" class="btn btn-primary">Checkout</button>
+</form>
+</body>
+</html>

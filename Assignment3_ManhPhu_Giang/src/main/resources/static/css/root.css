@@ -1,0 +1,79 @@
+/* root.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 20px;
+    text-align: center; 
+    background-image: url("/img/2.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+    font-size: xx-large;
+
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: #000000;
+    font-size: xx-large;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #a68787;
+    opacity: 0.7;
+font-size: xx-large;
+}
+
+button:hover {
+    background-color: #a68787;
+}
+
+h1 {
+    color: #333;
+    background-color: #a68787;
+    font-size: xx-large;
+    opacity: 0.7;
+
+
+}
+
+div {
+    margin-top: 20px;
+    margin: auto; 
+    max-width: 600px;
+    text-align: left;
+    background-color: #a68787;
+
+}
+
+form {
+    margin-top: 10px;
+    background-color: #a68787;
+    font-size: xx-large;
+    opacity: 0.7;
+
+}
+
+/* Add styles for user information section */
+div[sec\:authorize="isAuthenticated()"] {
+    color: #333;
+}
+
+/* Add styles for different user roles */
+div[th\:if="${#authorization.expression('hasRole(''ROLE_GUEST'')')}"],
+div[th\:if="${#authorization.expression('hasRole(''ROLE_VENDER'')')}"] {
+    margin-top: 40px;
+}
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h1>Game List </h1>
+<ol>
+
+
+    <li th:each="game : ${meow}" th:text="${meow}"></li>
+
+
+</ol>
+
+
+<table border="1">
+    <tr> 
+        <th>Title </th>
+        <th>Price </th>
+        <th>Console </th>
+        <th># Players </th>
+    </tr>
+<tr th:each="game: ${meow}">
+    <td th:text= "${game.title}"></td>
+    <td th:text= "${game.price}"></td> 
+    <td th:text= "${game.console}"></td> 
+    <td th:text= "${game.numPlayers}"></td> 
+</tr>
+</table>
+</body>
+</html>

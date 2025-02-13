@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:style="'background-image: url(@{/img/cat.jpg})'">
+
+
+
+
+<h1> Bruhhhhhhhh</h1>
+
+
+<div th:if="${param.logout}" class="alert">
+	You have logout
+</div>
+
+
+
+
+
+
+<div sec:authorize="isAuthenticated()"> 
+
+	User's Name: <span sec:authentication="name"></span> <br>
+	Roles: <span sec:authentication="principal.authorities"></span> <br>
+	<br><br>
+	
+	
+	
+
+	<form th:action="@{/logout}" method="POST"> 
+		<input type="submit" value="Logout">
+	</form>
+	
+</div>
+
+
+
+
+
+
+<a href="/page1">Go to Page 1</a>
+<br>
+<br>
+
+<a href="/page2">Link To Page 2</a>
+
+
+<br><br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout" >
+</form>
+<br><br>
+<form th:action="@{/registration}" method="get">
+    <input type="submit" value="registration" >
+</form>
+
+
+<img th:src="@{/img/cat.jpg}">
+
+</body>
+</html>

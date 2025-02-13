@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<h1>Page 1</h1>
+
+<span th:text="${session.meow}"></span><br><br>
+
+
+<!--if my session is not new, then I should have a name-->
+<h2 th:unless="${session.isnew}" th:text="'Welcome back ' +${session.name}"></h2>
+
+
+
+<div th:if="${session.isnew}">		<!--this the session is new, then send name-->
+<form action="/">
+	Please enter your name: <input type="text" name="name"><br>
+	<input type="submit" value="Enter">
+
+
+</form>
+
+</div>
+
+
+
+
+<br>
+<span th:text="${session.sessionID}"></span>  <!--nó tạo ID cho a specific session -->
+<br>
+
+
+
+
+<a th:href="@{/add}">Go Page 2</a>
+<br><br>
+
+<div th:unless="${session.isnew}">      <!--this tag th:if is visible if "isnew" is true-->
+<form th:action="@{/logout}">			<!--this tag th:unless is visible if "isnew" is false-->
+	<input type="submit" value="Logout">
+</form>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

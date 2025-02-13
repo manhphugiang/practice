@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Store</title>
+    <link rel="stylesheet" type="text/css" href="/css/addStore.css">
+
+</head>
+<body>
+    <h1>Add Store</h1>
+    <form th:action="@{/addStore}" method="post" th:object="${store}">
+        <label for="storeName">Store Name:</label>
+        <input type="text" id="storeName" name="storeName" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="numberEmployee">Number of Employees:</label>
+        <input type="number" id="numberEmployee" name="numberEmployee" required><br>
+      
+      
+        <label for="storeManager">Manager Name:</label>
+        <input type="text" id="storeManager" name="storeManager" required><br>
+
+        <input type="submit" value="Add Store">
+    </form>
+
+
+
+<br><br>
+<a href='/view' method='get'> Link To View Product of the Store </a>
+<br><br>
+
+<a href='/addProduct' method='get'> Link To Add Some Product For Store </a>
+    <br><br>
+<a href='/' method='get'> Link Go To Root </a>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Reset some default styles */
+body,
+h1,
+p {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Styles for the background image */
+#background-element {
+    background-image: url('/1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    opacity: 0.8;
+
+}
+
+.title {
+    background-color: rgba(23, 116, 216, 0.5);
+    color: white;
+    text-align: center;
+    width: 700px;
+    padding: 20px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+
+
+.location {
+    background-color: rgba(0, 0, 255, 0.5);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+
+
+
+.above-banner-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 20%;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 25px;
+    color: blue;
+    text-align: center;
+
+}
+
+.left-above-banner-box {
+    float: left;
+    font-size: 35px;
+}
+
+.right-above-banner-box {
+    float: right;
+    font-size: 35px;
+
+}
+
+.banner {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    text-align: center;
+    padding: 100px;
+    clear: both;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-image: url('/2.jpg');
+    background-size: cover;
+
+}

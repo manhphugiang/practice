@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="/css/view.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Contacts</title>
+</head>
+<body>
+    <h1>View Contacts</h1>
+  
+<table border="1">
+    <tr> 
+		<th> ID </th>
+        <th>Name </th>
+        <th> Address </th>
+        <th>Phone Number </th>
+        <th> Email </th>
+    </tr>
+<tr th:each="contact: ${contact}">
+	<td th:text= "${contact.id}"> </td>
+    <td th:text= "${contact.name}"></td>
+    <td th:text= "${contact.address}"></td> 
+    <td th:text= "${contact.phoneNumber}"></td> 
+    <td th:text= "${contact.email}"></td> 
+    <td > <a th:href="@{/edit/{id}(id=${contact.id})}" >EDIT </td>
+    <td > <a th:href="@{/delete/{id}(id=${contact.id})}" >DELETE </td>
+	
+</tr>
+    </table>
+    
+    <a href="/">Add New Contact</a>
+    
+    
+    
+<div sec:authorize="isAuthenticated()"> 
+
+	User's Name: <span sec:authentication="name"></span> <br>
+	Roles: <span sec:authentication="principal.authorities"></span> <br>
+	<br><br>
+	
+	
+	
+
+	<form th:action="@{/logout}" method="POST"> 
+		<input type="submit" value="Logout">
+	</form>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+    border: rgb(255, 128, 255);
+}
+body{
+    background-image: url('/music.jpg');
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: rgb(0, 255, 128);
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+a {
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #333;
+    color: rgb(0, 255, 128);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}

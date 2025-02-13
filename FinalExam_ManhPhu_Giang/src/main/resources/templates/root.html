@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+this is the root page 
+<div sec:authorize="isAuthenticated()"> 
+
+	User's Name: <span sec:authentication="name"></span> <br>
+	Roles: <span sec:authentication="principal.authorities"></span> <br>
+	<br><br>
+
+	<form th:action="@{/logout}" method="POST"> 
+		<input type="submit" value="Logout">
+	</form>
+	
+</div>
+
+
+
+
+Hello this is the awdawdwadawd
+
+
+
+
+
+<br>
+<br>
+<a href='/'>Go To Root</a>
+<br>
+<br>
+<a href="/add" > this is the link to the add accountant page </a>
+<br>
+<br>
+<a href="/view" > this is the link to the view accountant page </a>
+<br>
+<br>
+<a href="/registration" > registration page </a>
+<br>
+<br>
+<a href="/email" > take to email page </a>
+
+
+</body>
+</html>
