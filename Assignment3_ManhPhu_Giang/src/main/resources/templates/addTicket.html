@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/addTicket.css}">
+
+</head>
+<body>
+    <h1>Add Ticket</h1>
+
+    <form th:action="@{/add}" method="post" th:object="${ticket}">
+
+
+        <label for="selectedGuest">Select Guest Username:</label>
+        <select id="selectedGuest" name="selectedGuest" th:field="*{selectedGuest}">
+            <option th:each="guest : ${guest}" th:value="${guest}" th:text="${guest}"></option>
+        </select>
+        
+        <br>
+
+        <label for="ticketType">Select Your Ticket Type Please:</label>
+        <select id="ticketType" name="ticketType" th:field="*{ticketType}">
+            <option value="General Admission">General Admission - $50.99</option>
+            <option value="VIP">VIP - $100.99</option>
+            <option value="Student Discount">Student Discount - $30.99</option>
+        </select><br>
+
+        <label for="creditCardNumber">Credit Card Number:</label>
+        <input type="number" id="creditCardNumber" name="creditCardNumber" th:field="*{creditCardNumber}" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:field="*{email}" required><br>
+
+        <label for="cvv">CVV:</label>
+        <input type="number" id="cvv" name="cvv" th:field="*{cvv}" required><br>
+
+  
+        <input type="submit" value="Add Ticket">
+    </form>
+    
+    
+    <br><br>
+    <a href="/">
+     <button type="button">Link To Home Page</button>
+    </a>
+    <a href="/viewVender">
+        <button type="button"> Go To See All The Ticket Link</button></a>
+    
+       <br><br>
+    
+
+</body>
+</html>

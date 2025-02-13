@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/root.css}">
+
+</head>
+<body>
+
+    <div sec:authorize="isAuthenticated()"> 
+        User's Name: <span sec:authentication="name"></span> <br>
+        Roles: <span sec:authentication="principal.authorities"></span> <br>
+        <br><br>
+        <a href="/logout" method='POST'>  
+            <button type="button"> Link To logout of the Event </button>
+        </a>
+
+        </div>
+    
+
+    <br><br>
+    <a href='/registration' method='get'>  
+        <button type="button"> Link To registration of the Event </button>
+    </a>
+    <br><br>
+
+
+
+
+
+
+   <br><br>
+        <a href="/login">
+            <button type="button">Go to Login Or To Change Account</button>
+        </a>
+
+
+   <br><br>
+
+<div th:if="${#authorization.expression('hasRole(''ROLE_GUEST'')')}">
+    <h1>Welcome Our Valued Customer</h1>
+    <a href="/viewGuest">
+        <button type="button">Go To See Your Ticket Link</button>
+    </a>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br> 
+</div>
+<div th:if="${#authorization.expression('hasRole(''ROLE_VENDER'')')}">
+
+<h1>Welcome Back Vender</h1>
+   <a href="/viewVender">
+    <button type="button"> Go To See All The Ticket Link</button></a>
+
+   <br><br>
+   <a href="/addTicket">
+    <button type="button">Link To Add Some Ticket</button>
+</a>
+</div>
+
+
+
+</body>
+</html>

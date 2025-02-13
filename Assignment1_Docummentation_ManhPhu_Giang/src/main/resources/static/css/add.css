@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(94, 143, 227);
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#root {
+  margin-top: 20px; 
+}
+#view {
+  background-color: #6aa6e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px; 
+  text-align: center;
+  display: inline-block;
+}
+
+#view:hover {
+  background-color: #4d87d1;
+}
+.ticket {
+  text-align: center;
+  font-size: 18px;
+}
+#ticketType {
+  font-size: 16px;
+  margin-top: 10px;
+}
+#form {
+  width: 100%;
+  max-width: 600px; 
+}
+#root {
+  background-color: #6aa6e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#root:hover {
+  background-color: #4d87d1;
+}
+#submit {
+  background-color: #6aa6e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#submit:hover {
+  background-color: #4d87d1;
+}
+.data {
+  color: #fff;
+  max-width: 600px; 
+}
+.data > * {
+  margin: 10px 0;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}

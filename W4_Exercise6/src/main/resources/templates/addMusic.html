@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/css/addMusic.css}" rel="stylesheet">
+
+</head>
+<h1>
+    Add Music
+</h1>
+<body>                   
+
+
+    <form th:action="@{/add}" method="post" th:object="${music}">
+        Title: <input type="text" th:field="*{title}" required> <br><br>
+        Run Times : <input type="number" step="0.01" th:field="*{runTimes}"  required> <br><br>
+        Artist: <input type="text" th:field="*{artist}" ><br><br>
+        Genre: <select th:field="*{genre}">
+
+        <option th:each ="c : *{genres}" th:text="${c}" th:value="${c}">
+
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+        </form>
+<a href="/view">Link To View Page</a>
+
+</body>
+</html>

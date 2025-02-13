@@ -1,0 +1,199 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>MyTechShop - Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">MyTechShop</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post" class="form-inline">
+                            <button type="submit" class="btn btn-link nav-link">Logout</button>
+                        </form>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to MyTechShop!</h1>
+        <p class="lead">Your one-stop shop for all tech goods.</p>
+    </div>
+
+    <div sec:authorize="isAuthenticated()">
+        <h2>User Info</h2>
+        <p>
+            User's Name: <span sec:authentication="name"></span>
+        </p>
+        <p>
+            Roles: <span sec:authentication="principal.authorities"></span>
+        </p>
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout" class="btn btn-danger">
+        </form>
+    </div>
+    
+    
+    
+    <h1> Navigation</h1>
+    
+    
+    
+    <a href='/'>Go To Root</a>
+<br>
+<br>
+<a href="/addItem" > this is the link to the add Item page </a>
+<br>
+<br>
+
+<a href="/registration" > registration page </a>
+<br>
+<br>
+<a href="/email" > take to email page </a>
+    
+
+    <h2>Available Items</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.description}"></td>
+                <td th:text="${item.price}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td>
+                    <form th:action="@{/cart/addItem}" method="post">
+                        <input type="hidden" name="itemId" th:value="${item.id}" />
+                        <input type="number" name="quantity" min="1" max="${item.quantity}" value="1" class="form-control" style="width: 70px; display: inline;" />
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>MyTechShop - Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">MyTechShop</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post" class="form-inline">
+                            <button type="submit" class="btn btn-link nav-link">Logout</button>
+                        </form>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to MyTechShop!</h1>
+        <p class="lead">Your one-stop shop for all tech goods.</p>
+    </div>
+
+    <div sec:authorize="isAuthenticated()">
+        <h2>User Info</h2>
+        <p>
+            User's Name: <span sec:authentication="name"></span>
+        </p>
+        <p>
+            Roles: <span sec:authentication="principal.authorities"></span>
+        </p>
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout" class="btn btn-danger">
+        </form>
+    </div>
+
+    <h1> Navigation</h1>
+    <div class="link-list">
+        <button onclick="location.href='/'">Go To Root</button>
+        <button onclick="location.href='/addItem'">Add Item</button>
+        <button onclick="location.href='/registration'">Registration</button>
+        <button onclick="location.href='/email'">Email</button>
+    </div>
+
+    <h2>Available Items</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.description}"></td>
+                <td th:text="${item.price}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td>
+                    <form th:action="@{/cart/addItem}" method="post">
+                        <input type="hidden" name="itemId" th:value="${item.id}" />
+                        <input type="number" name="quantity" min="1" max="${item.quantity}" value="1" class="form-control" style="width: 70px; display: inline;" />
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

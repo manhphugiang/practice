@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Manh Phu Giang</title>
+<link th:href="@{/css/add.css}" rel="stylesheet">
+</head>
+<body>
+    <img th:src="@{/2.jpg}" id="2">
+        <div class="info">
+          <h1> Your Infomation </h1>
+        </div>
+            <div class="data">
+
+  
+                <br><br><br>
+                <button id="root">
+                    <a href="/">Click To Go Back To Root</a>
+                    <br><br><br>
+                    <a href="/view">Link To View Page</a>
+
+                </button>
+
+            </div>
+            <div class="text">
+			<form action="/add" method="post" th:object="${event}" id="form">
+  
+      	         First Name: <input type="text" name="firstname" th:field="*{firstname}" required> <br><br>
+                 Last Name : <input type="text" name="lastname" th:field="*{lastname}" required> <br><br>
+                 Card Number : <input type="number" name="cardNumber" th:field="*{cardNumber}"required> <br><br>
+                 Name Holder : <input type="text" name="nameHolder" th:field="*{nameHolder}"required> <br><br>
+                 CVV : <input type="number" name="cvv" th:field="*{cvv}" required> <br><br>
+                 Get Your Ticket By:   <input type="checkbox" name="sms" th:field="*{sms}" >SMS
+                                       <input type="checkbox" name="mail" th:field="*{mail}">EMAIL<br><br>
+                 Phone Number: <input type="number" name="phoneNumber" th:field="*{phoneNumber}"> <br><br>
+                  Email: <input type="text" name="email" th:field="*{email}" required> <br><br>
+              
+              
+                        <div class="ticket">
+
+                <label for="ticketType">Select a Ticket:</label>
+                <select th:field="*{ticketType}" id="ticketType" name="ticketType">
+                    <option value="VVIP">VVIP - $5000</option>
+                    <option value="VIP">VIP - $3000</option>
+                    <option value="Student">Student - $2000</option>
+                    <option value="BrokeStudent">Broke Student - FREE</option>
+                </select>               
+                <br><br><br>
+
+                <button>  <input type="submit" value="Submit" id="submit"></button>
+
+              
+              
+              </form>
+              </div>
+            </div>
+
+                <div class="footer">
+
+                    <img th:src="@{/4.jpg}" id="4">
+                </div>
+
+</body>
+</html>

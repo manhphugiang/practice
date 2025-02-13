@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Guest Tickets</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/viewGuestTicket.css}">
+
+</head>
+<body>
+
+    <h1>Guest Ticket Table</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Ticket Type</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="ticketData : ${ticketData}">
+                <td th:text="${ticketData.name}"></td>
+                <td th:text="${ticketData.price}"></td>
+                <td th:text="${ticketData.ticketType}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    
+    <div th:if="${subtotal != null and taxes != null and total != null}">
+        <h2>Invoice Summary</h2>
+        <p>Subtotal: $<span th:text="${subtotal}"></span></p>
+        <p>Taxes (13%): $<span th:text="${taxes}"></span></p>
+        <p>Total: $<span th:text="${total}"></span></p>
+    </div>
+
+
+
+    <a href='/'>Go To Root</a>
+
+</body>
+</html>

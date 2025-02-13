@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin: 20px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button, input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('form[action*="/logout"]').addEventListener("submit", function(event) {
+                if (!confirm("Are you sure you want to logout?")) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div sec:authorize="isAuthenticated()"> 
+            User's Name: <span sec:authentication="name"></span> <br>
+            Roles: <span sec:authentication="principal.authorities"></span> <br>
+            <br><br>
+
+            <form th:action="@{/logout}" method="POST"> 
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+
+        <h1>Hi, Enter Your Email To Get All Tech Goods Information</h1>
+
+        <form th:action="@{/email}" method="post">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">See Tech Goods Details Via Email</button>
+        </form>
+
+        <br><br>
+        <a href='/'>Go To Root</a>
+        <br><br>
+        <a href="/add">This is the link to the add accountant page</a>
+        <br><br>
+        <a href="/view">This is the link to the view accountant page</a>
+        <br><br>
+        <a href="/registration">Registration page</a>
+        <br><br>
+    </div>
+    
+</body>
+</html>
+

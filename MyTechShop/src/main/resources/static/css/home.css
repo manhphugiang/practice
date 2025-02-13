@@ -1,0 +1,223 @@
+/* /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+Body styles
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+Navbar styles
+.navbar {
+    background-color: #000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 15px;
+}
+
+Jumbotron styles
+.jumbotron {
+    background: linear-gradient(to bottom, #ffffff, #f2f2f7);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.jumbotron h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.jumbotron p {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+User Info styles
+.user-info {
+    margin-top: 50px;
+    text-align: center;
+}
+
+Link list styles
+.link-list {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.link-list a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.link-list a:hover {
+    background-color: #0056b3;
+}
+
+Table styles
+.table {
+    margin-top: 50px;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.table th {
+    background-color: #f2f2f7;
+    font-weight: bold;
+}
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 15px;
+}
+
+/* Jumbotron styles */
+.jumbotron {
+    background: linear-gradient(to bottom, #ffffff, #f2f2f7);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.jumbotron h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.jumbotron p {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* User Info styles */
+.user-info {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Link list styles */
+.link-list {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.link-list button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.link-list button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+.table {
+    margin-top: 50px;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.table th {
+    background-color: #f2f2f7;
+    font-weight: bold;
+}
+

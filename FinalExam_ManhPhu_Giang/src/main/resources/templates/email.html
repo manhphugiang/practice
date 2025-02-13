@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Email</title>
+</head>
+<body>
+
+    <div sec:authorize="isAuthenticated()"> 
+
+        User's Name: <span sec:authentication="name"></span> <br>
+        Roles: <span sec:authentication="principal.authorities"></span> <br>
+        <br><br>
+        
+        
+        
+    
+        <form th:action="@{/logout}" method="POST"> 
+            <input type="submit" value="Logout">
+        </form>
+        
+    </div>
+
+
+    <h1>Hi, Enter Your Email To Get The Accountant Table Information</h1>
+
+    <form th:action="@{/email}" method="post">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">See Accountant Details Via Email</button>
+    </form>
+
+
+
+    <br>
+<br>
+<a href='/'>Go To Root</a>
+<br>
+<br>
+<a href="/add" > this is the link to the add accountant page </a>
+<br>
+<br>
+<a href="/view" > this is the link to the view accountant page </a>
+<br>
+<br>
+<a href="/registration" > registration page </a>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> Welcome To View CupCake Store </h1>
+
+<table border="1">
+    <tr> 
+		<th> ID </th>
+        <th>Name </th>
+        <th>Price </th>
+        <th>Quantity </th>
+
+
+
+    </tr>
+<tr th:each="cupcake: ${cupcake}">
+	<td th:text= "${cupcake.id}"> </td>
+    <td th:text= "${cupcake.cupcakeName}"></td>
+    <td th:text= "${cupcake.price}"></td> 
+	<td>
+		<span th:if="${cupcake.quantity > 0}" th:text="${cupcake.quantity}"></span>
+		<span th:unless="${cupcake.quantity > 0}">Sold Out</span>
+	</td>
+	<td>
+		<a th:if="${cupcake.quantity > 0}" th:href="@{/purchase/{id}(id=${cupcake.id})}">Purchase</a>
+		<span th:unless="${cupcake.quantity > 0}">Sold Out</span>
+	</td>
+	<td > <a th:href="@{/delete/{id}(id=${cupcake.id})}" >DELETE </td>
+
+	
+
+</table>
+	<a href='/addCupcake' method='get'> Link To Add Some Cupcake </a>
+
+<br><br>
+<br><br>
+
+<br><br>
+<br><br>
+<a href='/' method='get'> Link To Root Page Cupcake  </a>
+
+
+</body>
+</html>

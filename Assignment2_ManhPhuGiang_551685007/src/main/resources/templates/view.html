@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Products</title>
+    <link rel="stylesheet" type="text/css" href="/css/view.css">
+
+</head>
+<body>
+
+<form th:action="@{/view}" method="post">
+    <label for="storeName">Choose the Store:</label>
+<select id="storeName" name="selectedStoreName" required>
+    <option value="" disabled selected>Select a Store</option>
+    <option th:each="store : ${storeNames}" th:value="${store}" th:text="${store}" th:selected="${store == selectedStoreName}"></option>
+</select>
+    <br><br>
+    <input type="submit" value="View Products">
+</form>
+
+
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Location</th>
+            <th>Number Of Employee</th>
+            <th>Manager Name</th>
+            <th>Store Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="data : ${storeData}">
+            <td th:text="${data.location}"></td>
+            <td th:text="${data.numberEmployee}"></td>
+            <td th:text="${data.storeManager}"></td>
+            <td th:text="${data.storeName}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Store Name</th>
+            <th>Product Number</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    
+    
+    <tbody>
+<tr th:each="product : ${productData}">
+    <td th:text="${product.id}"></td>
+    <td th:text="${product.productName}"></td> 
+    <td th:text="${product.storeName}"></td>
+    <td th:text="${product.productNumber}"></td>
+    <td th:text="${product.price}"></td>
+    <td>
+        <a th:href="@{/edit/{id}(id=${product.id})}">EDIT</a>
+        <a th:href="@{/delete/{id}(id=${product.id})}">DELETE</a>
+    </td>
+</tr>
+
+	</tbody>
+</table>
+
+
+    <br><br>
+<a href='/addProduct' method='get'> Link To Add Some Product Item For the Store </a>
+<br><br>
+
+<a href='/addStore' method='get'> Link To Add Some Store </a>
+<br><br>
+
+<a href='/' method='get'> Link Go To Root </a>
+
+
+
+</body>
+</html>
